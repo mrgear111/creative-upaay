@@ -1,18 +1,70 @@
-# React + Vite
+# Task Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based task management system designed to streamline workflow management through an interactive, persistent dashboard.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This application was developed as part of a full-stack development assessment. It implements a multi-column task board with drag-and-drop capabilities, advanced task tracking features, and persistent state management.
 
-## React Compiler
+## Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Core Functionality (Level 1)
+- Design implementation following Figma specifications using Tailwind CSS.
+- Task organization across three primary status columns: To Do, On Progress, and Done.
+- Drag-and-drop interface for task movement between columns.
+- Content-based search and priority-based filtering.
+- State persistence using Redux and LocalStorage.
 
-Note: This will impact Vite dev & build performances.
+### Advanced Features (Level 2)
+- Nested subtask management with real-time progress tracking.
+- Task-specific activity logs documenting status changes and updates.
+- Dynamic tagging system for customizable task categorization.
+- Due date management with automated status tracking.
+- Interactive sidebar with collapsible navigation for optimized screen layout.
+- Centralized notification system for user interaction feedback.
 
-## Expanding the ESLint configuration
+## Technical Implementation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### State Management
+The application uses Redux Toolkit for centralized state management. The store is configured to synchronize with LocalStorage, ensuring that the board state (tasks, positions, and activities) is maintained across browser sessions.
+
+### Drag and Drop
+Interactive task movement is handled via the `@hello-pangea/dnd` library, providing smooth transitions and reliable state updates during reorganizations.
+
+### Component Architecture
+Reusable functional components were utilized throughout the project to ensure maintainability. Key components include:
+- Board: Orchestrates the task columns and drag-and-drop context.
+- TaskDetailModal: Manages complex task interactions including subtasks and activity logs.
+- Sidebar & Header: Dynamic navigation components with refined state handling.
+
+## Local Setup
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   cd project-directory
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Access the application:
+   Open `http://localhost:5173` in your web browser.
+
+## Design Decisions
+- Utilized a minimalist aesthetic to prioritize clarity and readability of task data.
+- Implemented a reverse-chronological activity log to provide a clear audit trail for project progress.
+- Focused on responsive UI elements that maintain design integrity across different screen sizes.
